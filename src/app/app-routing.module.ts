@@ -19,22 +19,22 @@ import { AuthGuardService } from './../app/services/auth-guard.service';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent  , canActivate: [AuthGuardService]},
-  { path: 'throughputplanb4', component: ThroughputPlanB4Component  , canActivate: [AuthGuardService]},
-  { path: 'throughputrecordb4', component: ThroughputRecordB4Component  , canActivate: [AuthGuardService]},
-  { path: 'throughputplancd1', component: ThroughputPlanCD1Component  , canActivate: [AuthGuardService]},
-  { path: 'throughputrecordcd1', component: ThroughputRecordCD1Component  , canActivate: [AuthGuardService]},
-  { path: 'fuelyearly', component: FuelYearlyComponent  , canActivate: [AuthGuardService]},
-  { path: 'fuelbudgetpermonth', component: FuelBudgetPerMonthComponent  , canActivate: [AuthGuardService]},
-  { path: 'fuelpubliccar', component: FuelPublicCarComponent  , canActivate: [AuthGuardService]},
-  { path: 'fuelsparatebyplant', component: FuelSparateByPlantComponent  , canActivate: [AuthGuardService]},
-  { path: 'fuelb4purchase', component: FuelB4PurchaseComponent  , canActivate: [AuthGuardService]},
-  { path: 'fuelcd1purchase', component: FuelCD1PurchaseComponent  , canActivate: [AuthGuardService]},
+  { path: 'fuel/throughputplanb4', component: ThroughputPlanB4Component  , canActivate: [AuthGuardService]},
+  { path: 'fuel/throughputrecordb4', component: ThroughputRecordB4Component  , canActivate: [AuthGuardService]},
+  { path: 'fuel/throughputplancd1', component: ThroughputPlanCD1Component  , canActivate: [AuthGuardService]},
+  { path: 'fuel/throughputrecordcd1', component: ThroughputRecordCD1Component  , canActivate: [AuthGuardService]},
+  { path: 'fuel/fuelyearly', component: FuelYearlyComponent  , canActivate: [AuthGuardService]},
+  { path: 'fuel/fuelbudgetpermonth', component: FuelBudgetPerMonthComponent  , canActivate: [AuthGuardService]},
+  { path: 'fuel/fuelpubliccar', component: FuelPublicCarComponent  , canActivate: [AuthGuardService]},
+  { path: 'fuel/fuelsparatebyplant', component: FuelSparateByPlantComponent  , canActivate: [AuthGuardService]},
+  { path: 'fuel/fuelb4purchase', component: FuelB4PurchaseComponent  , canActivate: [AuthGuardService]},
+  { path: 'fuel/fuelcd1purchase', component: FuelCD1PurchaseComponent  , canActivate: [AuthGuardService]},
   { path: '', pathMatch: 'full', redirectTo: '/dashboard'  },
   { path: '**', component: LoginComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

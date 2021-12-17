@@ -1,1 +1,57 @@
-<p>throughput-plan-cd1 works!</p>
+<div class="content">
+
+    <div class="row">
+
+      <div class="col-sm-12">
+    
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Throughput Plan CD1</h5>
+          </div>
+        
+          <div class="card-body">
+          </div>
+        
+          <div  class="dataTables_wrapper no-footer">
+            <div class="datatable-scroll-wrap" [ngStyle]="{'height': table_height + 'px'}">
+              <table class="table small table-bordered table-striped  datatable-scroll-y datatable-scroll-normal">
+                <thead>
+                  <tr role="row">
+                    <th >เดือน</th>
+                    <th>Plan Throughput</th>
+                    <th>Plan Use Liter</th>
+                    <th>All Activity</th>
+                    <th>Actual Purchased</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="container_data.length > 0">
+                  <tr *ngFor="let item of container_data; let i = index">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tbody *ngIf="container_data.length == 0">
+                  <tr>
+                    <td colspan="7">
+                      <span *ngIf="loading">
+                        <i class="icon-spinner4 spinner" ></i>&nbsp;กำลังโหลดข้อมูล...
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  

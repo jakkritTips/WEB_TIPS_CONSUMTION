@@ -4,7 +4,9 @@
             <h1>Consumtion Management System</h1>
         </div>
         <div> 
-            <button type="button" (click)="loginWithGoogle()" >Login</button>
+            <button class="btn btn-primary" type="button" (click)="loginWithGoogle()" [disabled]="loading">
+                <i class="icon-spinner4 spinner" *ngIf="loading"></i>&nbsp;Signin With Google
+            </button>
         </div>
     </div>
     

@@ -23,7 +23,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HttpExtensions } from './services/http-extensions';
 import { AuthenticationService } from './services/authentication.service';
 import { FAASService } from './services/faas.service';
-import { FuelYearlyComponent } from './fuel-yearly/fuel-yearly.component';
+import { FuelYearlyComponent } from './pages/fuel-yearly/fuel-yearly.component';
 import { FuelBudgetPerMonthComponent } from './pages/fuel-budget-per-month/fuel-budget-per-month.component';
 import { FuelPublicCarComponent } from './pages/fuel-public-car/fuel-public-car.component';
 import { FuelSparateByPlantComponent } from './pages/fuel-sparate-by-plant/fuel-sparate-by-plant.component';
