@@ -20,7 +20,7 @@ export interface ErrorResponse {
 
 @Injectable({ providedIn: 'root' })
 
-export class HttpExtensions {
+export class HttpExtensionsERP {
 
     private axiosClient: AxiosInstance;
 	private errorHandler: ErrorHandler;

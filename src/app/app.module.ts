@@ -23,13 +23,33 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HttpExtensions } from './services/http-extensions';
 import { AuthenticationService } from './services/authentication.service';
 import { FAASService } from './services/faas.service';
+import { FuelYearlyComponent } from './fuel-yearly/fuel-yearly.component';
+import { FuelBudgetPerMonthComponent } from './pages/fuel-budget-per-month/fuel-budget-per-month.component';
+import { FuelPublicCarComponent } from './pages/fuel-public-car/fuel-public-car.component';
+import { FuelSparateByPlantComponent } from './pages/fuel-sparate-by-plant/fuel-sparate-by-plant.component';
+import { FuelB4PurchaseComponent } from './pages/fuel-b4-purchase/fuel-b4-purchase.component';
+import { FuelCD1PurchaseComponent } from './pages/fuel-cd1-purchase/fuel-cd1-purchase.component';
+import { ThroughputPlanB4Component } from './pages/throughput-plan-b4/throughput-plan-b4.component';
+import { ThroughputRecordB4Component } from './pages/throughput-record-b4/throughput-record-b4.component';
+import { ThroughputPlanCD1Component } from './pages/throughput-plan-cd1/throughput-plan-cd1.component';
+import { ThroughputRecordCD1Component } from './pages/throughput-record-cd1/throughput-record-cd1.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    FuelYearlyComponent,
+    FuelBudgetPerMonthComponent,
+    FuelPublicCarComponent,
+    FuelSparateByPlantComponent,
+    FuelB4PurchaseComponent,
+    FuelCD1PurchaseComponent,
+    ThroughputPlanB4Component,
+    ThroughputRecordB4Component,
+    ThroughputPlanCD1Component,
+    ThroughputRecordCD1Component
   ],
   imports: [
     HttpClientModule,

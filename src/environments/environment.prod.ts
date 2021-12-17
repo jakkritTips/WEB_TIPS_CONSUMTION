@@ -9,5 +9,7 @@ export const environment = {
    // ERP 365 API
    userERP365:"QUICKTEAM",
    passERP365:"55SxUB2SmfH6keMVtccfB5CwGXBiFs2qO2PROtsoanY=",
-   erpPageAssetCard:"https://api.businesscentral.dynamics.com/v2.0/206207c2-a899-4b50-9fdc-cd7ed6f63031/TIPSUAT/ODataV4/Company('My%20Company')/Fixed_Asset_Card_Excel"
+   erpPageAssetMaster:"https://api.businesscentral.dynamics.com/v2.0/206207c2-a899-4b50-9fdc-cd7ed6f63031/TIPSUAT/ODataV4/Company('My%20Company')/Fixed_Asset_Card_Excel",
+   erpPageLocation:"https://api.businesscentral.dynamics.com/v2.0/206207c2-a899-4b50-9fdc-cd7ed6f63031/TIPSUAT/ODataV4/Company('My%20Company')/Fixed_Asset_Card_Excel",
+   erpPageItemLedgerEntrie:"https://api.businesscentral.dynamics.com/v2.0/206207c2-a899-4b50-9fdc-cd7ed6f63031/TIPSUAT/ODataV4/Company('My%20Company')/Fixed_Asset_Card_Excel"
 };
