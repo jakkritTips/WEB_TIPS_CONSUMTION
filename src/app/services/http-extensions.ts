@@ -31,7 +31,7 @@ export class HttpExtensions {
  
 		// The ApiClient wraps calls to the underlying Axios client.
 		this.axiosClient = axios.create({
-			timeout: 3000,
+			timeout: 60000,
 			headers: {
 				"X-Initialized-At": Date.now().toString()
 			}
@@ -69,14 +69,14 @@ export class HttpExtensions {
 	}
 
 
-	// I perform a GET request with the given options.
+	// I perform a POST request with the given options.
 	public async post<T>(url:string,params:any) : Promise<T> {
  
 		try {
 			let axiosResponse:any = await this.axiosClient.request<T>({
 				method: "post",
 				url: url,
-				params: params
+				data: params
 			});
  
 			return await (axiosResponse.data);

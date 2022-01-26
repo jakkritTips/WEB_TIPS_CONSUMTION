@@ -5,8 +5,20 @@
       <div class="col-sm-12">
     
         <div class="card">
-          <div class="card-header">
+          <div class="card-header header-elements-sm-inline py-sm-0">
             <h5 class="card-title">ระบบบันทึกตู้ B4</h5>
+            <div class="header-elements">
+                <div class="input-group" style="margin-top: 5px;">
+                    <div class="input-group-append position-static">
+                        <button type="button" class="btn btn-light"><span *ngIf="select_year != ''">{{ select_year }}</span><span *ngIf="select_year == ''">เลือกปี</span></button>
+                        <button type="button" class="btn btn-light dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false"></button>
+  
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a (click)="searchByYear(i)" href="javascript:void(0)" class="dropdown-item" *ngFor="let i of years">{{ i }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
         
           <div class="card-body">
@@ -30,22 +42,86 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody *ngIf="container_data.length > 0">
-                  <tr *ngFor="let item of container_data; let i = index">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tbody *ngIf="plan_data.length > 0">
+                  <tr *ngFor="let item of plan_data; let i = index">
+                    <td>{{ item.monthName }}</td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.coastal" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td><div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                      <input type="number" class="form-control box-gray" [(ngModel)]="item.inter" [disabled]="item.saving" />
+                      <div class="form-control-feedback">
+                        <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                      </div>
+                    </div>
+                  </td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.b4ToCD" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.teusRun" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.gateINOut" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.cfs" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.reefer_B4_BOX" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.reefer_B4_TEU" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-group form-group-feedback form-group-feedback-right"  style="margin-bottom: 0;">
+                        <input type="number" class="form-control box-gray" [(ngModel)]="item.allActivity" [disabled]="item.saving" />
+                        <div class="form-control-feedback">
+                          <i *ngIf="item.saving" class="icon-spinner2 spinner"></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <button type="button" class="btn-retro-green" (click)="updatePlan(item)">UPDATE</button>
+                    </td>
                   </tr>
                 </tbody>
-                <tbody *ngIf="container_data.length == 0">
+                <tbody *ngIf="plan_data.length == 0">
                   <tr>
                     <td colspan="7">
                       <span *ngIf="loading">

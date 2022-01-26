@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../../services/authentication.service';
 import { Router } from '@angular/router';
 import { UserInfo } from './../../models/autherize_model';
+import { environment } from '../../../environments/environment';
 declare var $: any;
 
 @Component({
@@ -32,7 +33,22 @@ export class LoginComponent implements OnInit {
 
   async loginWithGoogle() {
     this.loading = true;
-    await this.auth.loginWithGoogle().then(() => this.router.navigate(['dashboard']));
+    const authGoogle:any = await this.auth.loginWithGoogle();
+    if(authGoogle.authToken != undefined && authGoogle.authToken != ""){
+      this.goDashboard();
+    }
+  }
+
+  async logout() {
+    this.loading = true;
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
+
+  goDashboard(){
+    console.log("go Dashbord");
+    //this.router.navigate(['/dashboard'])
+    location.href = environment.host;
   }
 
 }

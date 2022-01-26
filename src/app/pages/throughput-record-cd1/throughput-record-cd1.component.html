@@ -5,8 +5,20 @@
       <div class="col-sm-12">
     
         <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">ระบบบันทึกตู้ CD1</h5>
+          <div class="card-header header-elements-sm-inline py-sm-0">
+            <h5 class="card-title">ะบบบันทึกตู้ CD1</h5>
+            <div class="header-elements">
+                <div class="input-group" style="margin-top: 5px;">
+                    <div class="input-group-append position-static">
+                        <button type="button" class="btn btn-light"><span *ngIf="select_year != ''">{{ select_year }}</span><span *ngIf="select_year == ''">เลือกปี</span></button>
+                        <button type="button" class="btn btn-light dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false"></button>
+  
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a (click)="searchByYear(i)" href="javascript:void(0)" class="dropdown-item" *ngFor="let i of years">{{ i }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
         
           <div class="card-body">
@@ -26,8 +38,8 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody *ngIf="container_data.length > 0">
-                  <tr *ngFor="let item of container_data; let i = index">
+                <tbody *ngIf="plan_data.length > 0">
+                  <tr *ngFor="let item of plan_data; let i = index">
                     <td></td>
                     <td></td>
                     <td></td>
@@ -37,7 +49,7 @@
                     <td></td>
                   </tr>
                 </tbody>
-                <tbody *ngIf="container_data.length == 0">
+                <tbody *ngIf="plan_data.length == 0">
                   <tr>
                     <td colspan="7">
                       <span *ngIf="loading">

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Helpers } from './../../helpers/helpers';
+import { ThroughputService } from "./../../services/throughput.service";
+declare const ui: any;
 
 @Component({
   selector: 'app-throughput-plan-b4',
@@ -8,23 +10,42 @@ import { Helpers } from './../../helpers/helpers';
 })
 export class ThroughputPlanB4Component implements OnInit {
 
-  public years:any[] = [];
+  public years:number[] = [];
+  public row_status:any[] = [];
   public select_year:string = "";
   public table_height:number;
-  public container_data: any[] = [];
-  public container_data_temp: any[] = [];
+  public plan_data: any[] = [];
+  public plan_data_temp: any[] = [];
   public loading:boolean;
   
 
-  constructor(private helpers:Helpers) { }
+  constructor(private helpers:Helpers,private throughputService:ThroughputService) { }
   
   ngOnInit(): void {
     this.years = this.helpers.getYearDropdown();
     this.table_height = this.helpers.getTableHeight(230);
+    this.searchByYear(new Date().getFullYear());
   }
 
-  searchByYear(year:number){
-    this.select_year = year.toString();
+  async searchByYear(year:number){
+    const res:any = await this.throughputService.getPlanThroughputB4(year);
+    if(res.result.ok){
+      this.plan_data_temp = res.result.data.plan;
+      this.plan_data = res.result.data.plan;
+    }
+    console.log(res);
+  }
+
+  async updatePlan(item){
+    item.saving = true;
+    console.log("update",item);
+    const res:any = await this.throughputService.updatePlanThroughput(item);
+    if(res.result.ok){
+      ui.noti.s("ทำการบันทึกเรียบร้อย");
+      item.saving = false;
+    }else{
+      item.saving = false;
+    }
   }
 
 }

@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     this.user = new UserInfo();
     console.log(ui);
 
-    ui.noti.s("ทำการบันทึกเรียบร้อย");
+    //ui.noti.s("ทำการบันทึกเรียบร้อย");
 
     this.setMenu();
     this.setDetailDefault();
@@ -96,13 +96,14 @@ export class AppComponent implements OnInit {
 
   async loginWithGoogle() {
     if (!this.isLogin) {
-      await this.auth.loginWithGoogle().then(() => this.router.navigate(['dashboard']));
+      await this.auth.loginWithGoogle().then(() => this.router.navigate(['/dashboard']));
     }
   }
 
   async logOut() {
     try {
-      await this.auth.logOut().then(() => this.router.navigate(['login']));
+      this.router.navigate(['/login']);
+      await this.auth.logOut().then(() => this.router.navigate(['/login']));
       this.isLogin = false;
       this.setDetailDefault();
       this.closeNav();
@@ -127,16 +128,14 @@ export class AppComponent implements OnInit {
   }
 
   closeNav() {
-    document.getElementById("mySidenav").style.width = "50px";
-    document.getElementById("main").style.marginLeft = "50px";
-    var menu = document.getElementsByClassName("p-panelmenu-icon");
+    // try{
+    //   document.getElementById("mySidenav").style.width = "50px";
+    //   document.getElementById("main").style.marginLeft = "50px";
+    //   var menu = document.getElementsByClassName("p-panelmenu-icon");
+    // }catch{
 
-    // var i;
-    // for (i = 0; i < menu.length; i++) {
-    //   document.getElementsByClassName("p-panelmenu-icon")[0].style.display = 'none';
     // }
-
-
+    
     this.menuOpen = false;
 
   }
@@ -147,87 +146,7 @@ export class AppComponent implements OnInit {
   }
 
   setMenu() {
-    // this.items = [
-    //   {
-    //     label: 'File',
-    //     icon: 'pi pi-fw pi-file',
-    //     items: [
-    //       {
-    //         label: 'New',
-    //         icon: 'pi pi-fw pi-plus',
-    //       },
-    //       {
-    //         label: 'Delete',
-    //         icon: 'pi pi-fw pi-trash'
-    //       },
-    //       {
-    //         label: 'Export',
-    //         icon: 'pi pi-fw pi-external-link'
-    //       }
-    //     ]
-    //   },
-    //   {
-    //     label: 'Edit',
-    //     icon: 'pi pi-fw pi-pencil',
-    //     items: [
-    //       {
-    //         label: 'Left',
-    //         icon: 'pi pi-fw pi-align-left'
-    //       },
-    //       {
-    //         label: 'Right',
-    //         icon: 'pi pi-fw pi-align-right'
-    //       },
-    //       {
-    //         label: 'Center',
-    //         icon: 'pi pi-fw pi-align-center'
-    //       },
-    //       {
-    //         label: 'Justify',
-    //         icon: 'pi pi-fw pi-align-justify'
-    //       }
-    //     ]
-    //   },
-    //   {
-    //     label: 'Users',
-    //     icon: 'pi pi-fw pi-user',
-    //     items: [
-    //       {
-    //         label: 'New',
-    //         icon: 'pi pi-fw pi-user-plus',
-
-    //       },
-    //       {
-    //         label: 'Delete',
-    //         icon: 'pi pi-fw pi-user-minus',
-    //       },
-    //       {
-    //         label: 'Search',
-    //         icon: 'pi pi-fw pi-users',
-    //       }
-    //     ]
-    //   },
-    //   {
-    //     label: 'Events',
-    //     icon: 'pi pi-fw pi-calendar',
-    //     items: [
-    //       {
-    //         label: 'Edit',
-    //         icon: 'pi pi-fw pi-pencil',
-    //       },
-    //       {
-    //         label: 'Archieve',
-    //         icon: 'pi pi-fw pi-calendar-times',
-    //         items: [
-    //           {
-    //             label: 'Remove',
-    //             icon: 'pi pi-fw pi-calendar-minus'
-    //           }
-    //         ]
-    //       }
-    //     ]
-    //   }
-    // ]
+   
   }
 
 }
