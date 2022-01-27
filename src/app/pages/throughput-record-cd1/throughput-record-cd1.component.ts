@@ -12,7 +12,7 @@ export class ThroughputRecordCD1Component implements OnInit {
 
   public years:number[] = [];
   public row_status:any[] = [];
-  public select_year:string = "";
+  public select_year:number = 0;
   public table_height:number;
   public plan_data: any[] = [];
   public plan_data_temp: any[] = [];
@@ -24,10 +24,12 @@ export class ThroughputRecordCD1Component implements OnInit {
   ngOnInit(): void {
     this.years = this.helpers.getYearDropdown();
     this.table_height = this.helpers.getTableHeight(230);
-    this.searchByYear(new Date().getFullYear());
+    this.select_year = new Date().getFullYear();
+    this.searchByYear(this.select_year);
   }
 
   async searchByYear(year:number){
+    this.select_year = year;
     const res:any = await this.throughputService.getThroughputCD1(year);
     if(res.result.ok){
       this.plan_data_temp = res.result.data.plan;

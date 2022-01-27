@@ -10,7 +10,7 @@
             <div class="header-elements">
                 <div class="input-group" style="margin-top: 5px;">
                     <div class="input-group-append position-static">
-                        <button type="button" class="btn btn-light"><span *ngIf="select_year != ''">{{ select_year }}</span><span *ngIf="select_year == ''">เลือกปี</span></button>
+                        <button type="button" class="btn btn-light"><span *ngIf="select_year != 0">{{ select_year }}</span><span *ngIf="select_year == 0">เลือกปี</span></button>
                         <button type="button" class="btn btn-light dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false"></button>
   
                         <div class="dropdown-menu dropdown-menu-right">
@@ -38,7 +38,7 @@
                     <th>CFS</th>
                     <th>Reefer (Box)</th>
                     <th>Reefer (Teu)</th>
-                    <th>All Activity <br> (Teu)</th>
+                    <th>All Activity (Teu)</th>
                     <th></th>
                   </tr>
                 </thead>

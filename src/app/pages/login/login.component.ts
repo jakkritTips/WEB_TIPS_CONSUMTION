@@ -35,7 +35,9 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     const authGoogle:any = await this.auth.loginWithGoogle();
     if(authGoogle.authToken != undefined && authGoogle.authToken != ""){
-      this.goDashboard();
+      setTimeout(() => {
+        this.goDashboard();
+      }, 2000);
     }
   }
 

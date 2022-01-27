@@ -41,5 +41,15 @@ export class ThroughputService {
   async updateThroughput(item:any) {
     return await this.httpExtensions.post(environment.hostAPI + "throughput/updateThroughput", item);
   }
+
+
+  async getB4FuelConsumtion(year:number) {
+    return await this.httpExtensions.get(environment.hostAPI + "throughput/B4FuelConsumtion", { year:year });
+  }
+
+
+  
+
+
   
 }

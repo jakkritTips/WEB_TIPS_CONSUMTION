@@ -133,16 +133,36 @@ border-bottom: 1px solid #e1e1e1  !important; border-radius: 0 !important;
   }
 
   *:focus {
-    outline: none;
+    outline: none !important;
   }
 
   .form-control {
 
     height: calc(1.5715em + 2px);
-    padding: 0.3rem 0.5rem;
+    padding: 0.8rem 0.5rem;
     border-radius: 0.15rem;
 }
 
 .form-group-feedback-right .form-control {
   padding-right: 2rem;
+}
+
+.col-form-label {
+  padding-top: calc(0.15rem);
+  padding-bottom: calc(0.15rem);
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1.5715;
+}
+
+.sidebar-light .nav-sidebar .nav-link {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px){
+  .line-focus .form-group.row>.col-form-label {
+      background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnPjxjaXJjbGUgY3g9JzEnIGN5PSc0JyByPScxJyBmaWxsPScjZDBkM2Q3JyAvPjwvc3ZnPg==);
+      background-repeat: repeat-x;
+      background-position: left 7pt;
+  }
 }
