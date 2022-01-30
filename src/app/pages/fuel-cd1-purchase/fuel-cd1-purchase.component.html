@@ -29,42 +29,52 @@
               <table class="table small table-bordered table-striped  datatable-scroll-y datatable-scroll-normal">
                 <thead>
                     <tr>
-                        <th>เดือน</th>
-                        <th class="text-center">Plan Throughput (CD1)</th>
-                        <th class="text-center">Plan Throughput Accu (CD1)</th>
-                        <th class="text-center">Actual Throughput (CD1)</th>
-                        <th class="text-center">Actual Throughput Accu (CD1)</th>
-                        <th class="text-center">Plan Throughput Accu (WH)</th>
-                        <th class="text-center">Actual Throughput (WH)</th>
-                        <th class="text-center">Actual Throughput Accu (WH)</th>
-                        <th class="text-center">Plan Use(Ltrs)<br />(CD+WH)</th>
+                        <th rowspan="2">เดือน</th>
+                        <th class="text-center" rowspan="2">Plan Throughput (CD1)</th>
+                        <th class="text-center" rowspan="2">Plan Throughput Accu (CD1)</th>
+                        <th class="text-center" rowspan="2">Actual Throughput (CD1)</th>
+                        <th class="text-center" rowspan="2">Actual Throughput Accu (CD1)</th>
+                        <th class="text-center" rowspan="2">Plan Throughput Accu (WH)</th>
+                        <th class="text-center" rowspan="2">Actual Throughput (WH)</th>
+                        <th class="text-center" rowspan="2">Actual Throughput Accu (WH)</th>
+                        <th class="text-center" rowspan="2">Plan Use(Ltrs)<br />(CD+WH)</th>
                         <th class="text-center" colspan="2">Actual Used(Ltrs)<br />(CD+WH)</th>
                         <th class="text-center" colspan="2">Actual Used (B4)</th>
                         <th class="text-center" colspan="2">Total Actual Used</th>
                         <th class="text-center" colspan="2">Actual Purchased</th>
-                        <th class="text-center">Actual Lits/Teus</th>
+                        <th class="text-center" rowspan="2">Actual Lits/Teus</th>
+                    </tr>
+                    <tr>
+                      <th>T04</th>
+                      <th>T06</th>
+                      <th>T04</th>
+                      <th>T06</th>
+                      <th>T04</th>
+                      <th>T06</th>
+                      <th>T04</th>
+                      <th>T06</th>
                     </tr>
                 </thead>
                 <tbody *ngIf="plan_data.length > 0">
                   <tr class="month-list" *ngFor="let item of plan_data; let i = index">
                     <td>{{ item.monthText }}</td>
-                    <td class="text-right">{ item.planThroughput }}</td>
-                    <td class="text-right">{ item.planThroughputAccu }}</td>
-                    <td class="text-right">{ item.actualThroughput }}</td>
-                    <td class="text-right">{ item.actualThroughputAccu }}</td>
-                    <td class="text-right">{ item.planWHThroughput }}</td>
-                    <td class="text-right">{ item.actualWHThroughput }}</td>
-                    <td class="text-right">{ item.actualWHThroughputAccu }}</td>
-                    <td class="text-right">{ item.planUseAllLiters }}</td>
-                    <td class="text-right">{ item.actualUsedLitersCD1_T04 }}</td>
-                    <td class="text-right">{ item.actualUsedLitersCD1_T06 }}</td>
-                    <td class="text-right">{ item.actualUsedLitersB4_T04 }}</td>
-                    <td class="text-right">{ item.actualUsedLitersB4_T06 }}</td>
-                    <td class="text-right">{ item.actualUsedAllLiters_T04 }}</td>
-                    <td class="text-right">{ item.actualUsedAllLiters_T06 }}</td>
-                    <td class="text-right">{ item.actualPurchased_T04 }}</td>
-                    <td class="text-right">{ item.actualPurchased_T06 }}</td>
-                    <td class="text-right">{ item.actualLiterPerTueus }}</td>
+                    <td class="text-right">{{ item.planThroughput }}</td>
+                    <td class="text-right">{{ item.planThroughputAccu  }}</td>
+                    <td class="text-right">{{ item.actualThroughput  }}</td>
+                    <td class="text-right">{{ item.actualThroughputAccu  }}</td>
+                    <td class="text-right">{{ item.planWHThroughput  }}</td>
+                    <td class="text-right">{{ item.actualWHThroughputF  }}</td>
+                    <td class="text-right">{{ item.actualWHThroughputAccuF  }}</td>
+                    <td class="text-right">{{ item.planUseAllLiters  }}</td>
+                    <td class="text-right">{{ item.actualUsedLitersCD1_T04F  }}</td>
+                    <td class="text-right">{{ item.actualUsedLitersCD1_T06F  }}</td>
+                    <td class="text-right">{{ item.actualUsedLitersB4_T04F  }}</td>
+                    <td class="text-right">{{ item.actualUsedLitersB4_T06F  }}</td>
+                    <td class="text-right">{{ item.actualUsedAllLiters_T04F  }}</td>
+                    <td class="text-right">{{ item.actualUsedAllLiters_T06F  }}</td>
+                    <td class="text-right">{{ item.actualPurchased_T04F  }}</td>
+                    <td class="text-right">{{ item.actualPurchased_T06F  }}</td>
+                    <td class="text-right">{{ item.actualLiterPerTueusF }}</td>
                 </tr>
                 </tbody>
                 <tbody *ngIf="plan_data.length == 0">
@@ -83,6 +93,4 @@
         </div>
       </div>
     </div>
-    
   </div>
-  

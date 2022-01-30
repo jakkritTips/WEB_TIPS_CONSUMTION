@@ -28,7 +28,7 @@ export class FuelCD1PurchaseComponent implements OnInit {
   }
 
   async searchByYear(year:number){
-    const res:any = await this.throughputService.getB4FuelConsumtion(year);
+    const res:any = await this.throughputService.getCD1FuelConsumtion(year);
     this.select_year = year;
     if(res.result.ok){
       this.plan_data_temp = res.result.data.month;

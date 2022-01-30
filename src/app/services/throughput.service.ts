@@ -47,7 +47,9 @@ export class ThroughputService {
     return await this.httpExtensions.get(environment.hostAPI + "throughput/B4FuelConsumtion", { year:year });
   }
 
-
+  async getCD1FuelConsumtion(year:number) {
+    return await this.httpExtensions.get(environment.hostAPI + "throughput/CD1FuelConsumtion", { year:year });
+  }
   
 
 

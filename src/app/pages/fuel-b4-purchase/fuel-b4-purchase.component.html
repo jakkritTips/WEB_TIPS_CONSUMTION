@@ -29,21 +29,25 @@
               <table class="table small table-bordered table-striped  datatable-scroll-y datatable-scroll-normal">
                 <thead>
                     <tr>
-                        <th>เดือน</th>
-                        <th class="text-center">Plan Throughput</th>
-                        <th class="text-center">Plan Throughput Accu</th>
-                        <th class="text-center">Actual Throughput</th>
-                        <th class="text-center">Actual Throughput Accu</th>
-                        <th class="text-center">Actual Throughput I+C+Gate</th>
-                        <th class="text-center">Actual Throughput Accu I+C+Gate</th>
-                        <th class="text-center">Plan All Activity</th>
-                        <th class="text-center">All Activity (Teu)</th>
-                        <th class="text-center">Plan Use(Ltrs)</th>
-                        <th class="text-center">Actual Used(Ltrs)<br>(Tank B4)</th>
+                        <th  rowspan="2">เดือน</th>
+                        <th class="text-center" rowspan="2">Plan Throughput</th>
+                        <th class="text-center" rowspan="2">Plan Throughput Accu</th>
+                        <th class="text-center" rowspan="2">Actual Throughput</th>
+                        <th class="text-center" rowspan="2">Actual Throughput Accu</th>
+                        <th class="text-center" rowspan="2">Actual Throughput I+C+Gate</th>
+                        <th class="text-center" rowspan="2">Actual Throughput Accu I+C+Gate</th>
+                        <th class="text-center" rowspan="2">Plan All Activity</th>
+                        <th class="text-center" rowspan="2">All Activity (Teu)</th>
+                        <th class="text-center" rowspan="2">Plan Use(Ltrs)</th>
+                        <th class="text-center" rowspan="2">Actual Used(Ltrs)<br>(Tank B4)</th>
                         <th class="text-center" colspan="2">Actual Used(Ltrs)<br>(Tank CD1)</th>
-                        <th class="text-center">Total Actual Used(Ltrs)</th>
-                        <th class="text-center">Actual Purchased</th>
-                        <th class="text-center">Actual Lits/Teus</th>
+                        <th class="text-center" rowspan="2">Total Actual Used(Ltrs)</th>
+                        <th class="text-center" rowspan="2">Actual Purchased</th>
+                        <th class="text-center" rowspan="2">Actual Lits/Teus</th>
+                    </tr>
+                    <tr>
+                      <th>T04</th>
+                      <th>T06</th>
                     </tr>
                 </thead>
                 <tbody *ngIf="plan_data.length > 0">
@@ -57,13 +61,13 @@
                     <td class="text-right">{{ item.actualThroughputAllAccu }}</td>
                     <td class="text-right">{{ item.planAllActivity }}</td>
                     <td class="text-right">{{ item.allActivity }}</td>
-                    <td class="text-right">{{ item.actualUsedLitersB4 - (item.actualUsedLitersCD1_T04 + item.actualUsedLitersCD1_T06) }}</td>
-                    <td class="text-right">{{ item.actualUsedLitersB4 }}</td>
-                    <td class="text-right">{{ item.actualUsedLitersCD1_T04 }}</td>
-                    <td class="text-right">{{ item.actualUsedLitersCD1_T06 }}</td>
-                    <td class="text-right">{{ item.actualUsedLitersB4 }}</td>
-                    <td class="text-right">{{ item.actualPurchased }}</td>
-                    <td class="text-right">{{ item.actualLiterPerTueus }}</td>
+                    <td class="text-right">{{ item.planUserPerLiterF }}</td>
+                    <td class="text-right">{{ item.actualUsedLitersB4F }}</td>
+                    <td class="text-right">{{ item.actualUsedLitersCD1_T04F }}</td>
+                    <td class="text-right">{{ item.actualUsedLitersCD1_T06F }}</td>
+                    <td class="text-right">{{ item.actualUsedAllLitersF }}</td>
+                    <td class="text-right">{{ item.actualPurchasedF }}</td>
+                    <td class="text-right">{{ item.actualLiterPerTueusF }}</td>
                 </tr>
                 </tbody>
                 <tbody *ngIf="plan_data.length == 0">
