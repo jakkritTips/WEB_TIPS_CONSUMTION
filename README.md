@@ -23,8 +23,8 @@ npm install @microsoft/signalr --save
 
 ng build --base-href "/FuelConsumtion/" --prod
 
-publish PRD: \\10.1.1.31\c$\inetpub\wwwroot8010-Intranet\FuelConsumtion
-publish API: \\10.1.1.31\c$\inetpub\wwwroot8010-Intranet\FuelConsumtionAPI
+publish PRD: \\10.1.1.31\c$\inetpub\wwwroot8010-Intranet\Consumtion
+publish API: \\10.1.1.31\c$\inetpub\wwwroot8010-Intranet\ConsumtionAPI
 ```
 
 
