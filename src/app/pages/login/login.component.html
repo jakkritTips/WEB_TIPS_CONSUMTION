@@ -3,10 +3,40 @@
         <div>
             <h1>Consumtion Management System</h1>
         </div>
+        <br>
         <div> 
-            <button class="btn btn-primary" type="button" (click)="loginWithGoogle()" [disabled]="loading">
-                <i class="icon-spinner4 spinner" *ngIf="loading"></i>&nbsp;Signin With Google
-            </button>
+            <div style="width: 450px; color: #ffffff; margin-left: calc(50% - 225px); margin-top: 20px;">
+                <form action="#" style="border: 1px solid #10aa9f;border-radius: 5px;background-color: #141414; padding: 40px 20px;">
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-3" style="text-align: left;">Username</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" [(ngModel)]="username" name="username" style="font-weight: bold;">
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-3"  style="text-align: left;">Password</label>
+                        <div class="col-lg-9">
+                            <input type="password" class="form-control"  [(ngModel)]="password" name="password" style="font-weight: bold;">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" style="background-color: #09a89d; border: 1px solid #09a89d;" (click)="loginTIPS()"  [disabled]="loading">
+                            <i class="icon-spinner4 spinner" *ngIf="loginLoading"></i>&nbsp;เข้าระบบ
+                        </button>&nbsp;
+                        <button class="btn btn-primary" type="button" (click)="loginWithGoogle()" [disabled]="loading">
+                            <i class="icon-spinner4 spinner" *ngIf="gmailLoading"></i>&nbsp;Signin With Google
+                        </button>
+                    </div>
+                </form>
+                <div *ngIf="error" class="alert alert-warning alert-styled-left alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+                    <span class="font-weight-semibold">แจ้งเตือน!</span>&nbsp;<span>{{ error_message }}</span>
+                </div>
+            </div>
+            
+            
         </div>
     </div>
     

@@ -26,9 +26,9 @@ export class FAASService {
     return await this.httpExtensionsERP.get("xxx", { });
   }
 
-  async getAsset() {
-    return await this.httpExtensionsERP.get(environment.erpPageAssetCard, { });
-  }
+  // async getAsset() {
+  //   return await this.httpExtensionsERP.get(environment.erpPageAssetCard, { });
+  // }
 
   
 

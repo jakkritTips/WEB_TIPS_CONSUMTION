@@ -19,7 +19,7 @@ export class Helpers {
   getYearDropdown(){
     let years = [];
     let year_current = new Date().getFullYear();
-    for(var i = year_current; i >= 2019; i--){
+    for(var i = year_current; i >= 2022; i--){
       years.push(i);
     }
 

@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
     this.setDetailDefault();
     this.setMenuSlide();
 
-    this.getAsset();
+    //this.getAsset();
 
     if (this.auth.isLogin()) {
       this.isLogin = true;
@@ -62,13 +62,13 @@ export class AppComponent implements OnInit {
     }
   }
 
-  async getAsset() {
-    let res:any = await this.faas.getAsset();
-    console.log(res);
-  }
+  // async getAsset() {
+  //   let res:any = await this.faas.getAsset();
+  //   console.log(res);
+  // }
 
   async checkTIPSEmail(email) {
-    let res:any = await this.auth.getEmployeeInfo(email);
+    const res:any = await this.auth.getEmployeeInfoByEmail(email);
         if (res.ok) {
           let user = new UserInfo();
           user.token= res.data.token;

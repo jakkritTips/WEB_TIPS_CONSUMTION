@@ -14,7 +14,6 @@ export const environment = {
   // ERP 365 API
   userERP365:"ITUSR",
   passERP365:"lMHWAYuOtIK/L0WMHRCLlnQcOhfHerjinyD5sSTZWd0=",
-  erpPageAssetCard:"https://api.businesscentral.dynamics.com/v2.0/206207c2-a899-4b50-9fdc-cd7ed6f63031/TIPSUAT/ODataV4/Company('My%20Company')/Fixed_Asset_Card_Excel"
 };
 
 /*

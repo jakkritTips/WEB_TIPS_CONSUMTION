@@ -91,12 +91,21 @@ export class AuthenticationService {
     return await this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
+  async loginWithTips(user:string,password:string) {
+    console.log({ username: user, password: password });
+    return await this.httpExtensions.post("https://intranet.tips.co.th/TIPSAPI/api/autherize/login", { username: user, password: password });
+  }
+
   async logOut() {
     sessionStorage.removeItem(environment.auth);
     return await this.socialAuthService.signOut();
   }
 
-  async getEmployeeInfo(email) {
+  async getEmployeeInfoByEmail(email) {
     return await this.httpExtensions.post("https://intranet.tips.co.th/TIPSAPI/api/autherize/infoByEmail", { email: email, system: 'tips' });
+  }
+
+  async getEmployeeInfo(employee) {
+    return await this.httpExtensions.post("https://intranet.tips.co.th/TIPSAPI/api/autherize/infoByEmployee", { employee: employee, system: 'tips' });
   }
 }

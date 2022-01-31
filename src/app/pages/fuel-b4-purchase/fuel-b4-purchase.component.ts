@@ -28,13 +28,14 @@ export class FuelB4PurchaseComponent implements OnInit {
   }
 
   async searchByYear(year:number){
+    this.loading = true;
     const res:any = await this.throughputService.getB4FuelConsumtion(year);
     this.select_year = year;
     if(res.result.ok){
       this.plan_data_temp = res.result.data.month;
       this.plan_data = res.result.data.month;
     }
-    console.log(res);
+    this.loading = false;
   }
 
 }

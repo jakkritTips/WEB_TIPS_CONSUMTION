@@ -2,6 +2,33 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
+
+## STEP1. Install Environtment Angular
+```
+npm install -g @angular/cli
+```
+
+## STEP2. Install Nodemodules Folder
+```
+npm install
+```
+
+## STEP3. Install SignalR
+```
+npm install @microsoft/signalr --save
+```
+
+## STEP4. Build Appliaction Path IIS
+```
+
+ng build --base-href "/fuelconsumtion/" --prod
+
+publish PRD: \\10.1.1.31\c$\inetpub\wwwroot8010-Intranet\FuelConsumtion
+publish API: \\10.1.1.31\c$\inetpub\wwwroot8010-Intranet\FuelConsumtionAPI
+```
+
+
+
 ## Install PRIMENG UI
 ```
 npm install primeng --save
@@ -20,46 +47,6 @@ node_modules/primeicons/primeicons.css
 node_modules/primeng/resources/themes/saga-blue/theme.css
 node_modules/primeng/resources/primeng.min.css
 
-```
-
-## Free Themes
-```
-primeng/resources/themes/bootstrap4-light-blue/theme.css
-primeng/resources/themes/bootstrap4-light-purple/theme.css
-primeng/resources/themes/bootstrap4-dark-blue/theme.css
-primeng/resources/themes/bootstrap4-dark-purple/theme.css
-primeng/resources/themes/md-light-indigo/theme.css
-primeng/resources/themes/md-light-deeppurple/theme.css
-primeng/resources/themes/md-dark-indigo/theme.css
-primeng/resources/themes/md-dark-deeppurple/theme.css
-primeng/resources/themes/mdc-light-indigo/theme.css
-primeng/resources/themes/mdc-light-deeppurple/theme.css
-primeng/resources/themes/mdc-dark-indigo/theme.css
-primeng/resources/themes/mdc-dark-deeppurple/theme.css
-primevue/resources/themes/tailwind/tailwind-light/theme.css
-primeng/resources/themes/fluent-light/theme.css
-primeng/resources/themes/saga-blue/theme.css
-primeng/resources/themes/saga-green/theme.css
-primeng/resources/themes/saga-orange/theme.css
-primeng/resources/themes/saga-purple/theme.css
-primeng/resources/themes/vela-blue/theme.css
-primeng/resources/themes/vela-green/theme.css
-primeng/resources/themes/vela-orange/theme.css
-primeng/resources/themes/vela-purple/theme.css
-primeng/resources/themes/arya-blue/theme.css
-primeng/resources/themes/arya-green/theme.css
-primeng/resources/themes/arya-orange/theme.css
-primeng/resources/themes/arya-purple/theme.css
-primeng/resources/themes/nova/theme.css
-primeng/resources/themes/nova-alt/theme.css
-primeng/resources/themes/nova-accent/theme.css
-primeng/resources/themes/luna-amber/theme.css
-primeng/resources/themes/luna-blue/theme.css
-primeng/resources/themes/luna-green/theme.css
-primeng/resources/themes/luna-pink/theme.css
-primeng/resources/themes/rhea/theme.css
-
-```
 
 ## Scolling
 ```
